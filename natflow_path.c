@@ -954,7 +954,7 @@ fastnat_check:
 											}
 #endif
 											if (orig_dev->netdev_ops->ndo_flow_offload) {
-												 printk("orig_dev=%s reply_dev=%s ndo_flow_offload=%p\n", orig_dev->name, reply_dev->name, reply_dev->netdev_ops->ndo_flow_offload);
+							printk("orig_dev=%s reply_dev=%s ndo_flow_offload=%p ndo_flow_offload_check=%p\n",orig_dev->name, reply_dev->name, reply_dev->netdev_ops->ndo_flow_offload, reply_dev->netdev_ops->ndo_flow_offload_check);
 												if (orig_dev == reply_dev || reply_dev->netdev_ops->ndo_flow_offload) {
 													struct natflow_offload *natflow = natflow_offload_alloc(ct, nf);
 													struct flow_offload_hw_path orig = {
